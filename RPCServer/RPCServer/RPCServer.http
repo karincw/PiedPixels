@@ -1,0 +1,8 @@
+﻿@RPCServer_HostAddress = https://localhost:8081
+
+POST {{RPCServer_HostAddress}}/broadcast
+Content-Type: application/json
+{
+  "message":"Test"
+}
+###
