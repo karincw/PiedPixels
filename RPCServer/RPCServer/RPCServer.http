@@ -1,8 +1,12 @@
-﻿@RPCServer_HostAddress = https://localhost:8081
+﻿@RPCServer_HostAddress = https://localhost:5000
 
-POST {{RPCServer_HostAddress}}/broadcast
-Content-Type: application/json
+POST {{RPCServer_HostAddress}}/rpc
+Content-type:Application/json
+
 {
-  "message":"Test"
+  "Jsonrpc":"2.0",
+  "Method":"hello",
+  "Params":{"name":"world"},
+  "Id":1
 }
 ###

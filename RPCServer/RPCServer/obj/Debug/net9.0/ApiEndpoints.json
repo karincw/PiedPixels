@@ -1,23 +1,30 @@
 [
   {
     "ContainingType": "RPCServer.Program\u002B\u003C\u003Ec",
-    "Method": "\u003CMain\u003Eb__0_1",
-    "RelativePath": "broadcast",
+    "Method": "\u003CMain\u003Eb__0_0",
+    "RelativePath": "",
+    "HttpMethod": "GET",
+    "IsController": false,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "RPCServer.Program\u002B\u003C\u003Ec__DisplayClass0_0",
+    "Method": "\u003CMain\u003Eb__1",
+    "RelativePath": "rpc",
     "HttpMethod": "POST",
     "IsController": false,
     "Order": 0,
-    "Parameters": [
-      {
-        "Name": "message",
-        "Type": "System.String",
-        "IsRequired": true
-      },
-      {
-        "Name": "hubContext",
-        "Type": "Microsoft.AspNetCore.SignalR.IHubContext",
-        "IsRequired": true
-      }
-    ],
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "System.Void",

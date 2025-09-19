@@ -52,9 +52,7 @@ C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\RPCServe
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\RPCServer.runtimeconfig.json
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\RPCServer.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\RPCServer.pdb
-C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.AspNetCore.Connections.Abstractions.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
-C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Common.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.EntityFrameworkCore.InMemory.dll
@@ -64,13 +62,10 @@ C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsof
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
-C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.Extensions.Features.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.Extensions.Logging.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.Extensions.Options.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Microsoft.Extensions.Primitives.dll
-C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\Newtonsoft.Json.dll
-C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\System.Net.WebSockets.WebSocketProtocol.dll
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\obj\Debug\net9.0\RPCServer.csproj.AssemblyReference.cache
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\obj\Debug\net9.0\rpswa.dswa.cache.json
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\obj\Debug\net9.0\RPCServer.GeneratedMSBuildEditorConfig.editorconfig
