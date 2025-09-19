@@ -11,61 +11,73 @@ namespace RPCClient
                 .WithUrl("http://localhost:5000/gamehub")
                 .Build();
 
+            //서버가 보낸 RPC를 처리하는
             connection.On<string, string>("ReceiveMessage", (user, message) =>
-            {
-                // 현재 입력 줄 지우기
+            {           //   매개변수         RPC콜 이름      매개변수 매칭
                 ClearCurrentConsoleLine();
-
-                if (user == userName)
-                    Console.WriteLine($"[나] {message}");
-                else
-                    Console.WriteLine($"{user}: {message}");
-
-                // 다시 입력 프롬프트 출력
-                Console.Write("메시지 입력: ");
+                Console.WriteLine($"{user}: {message}");
             });
 
-            connection.On<PlayerPositionDTO>("RecivePlayerData", (playerdata) =>
+            connection.On<PlayerPositionDTO>("RecivePlayerPositionData", (playerdata) =>
             {
-                // 현재 입력 줄 지우기
                 ClearCurrentConsoleLine();
+                Console.WriteLine($"{playerdata.Id} Moved : ({playerdata.X}, {playerdata.Y})");
+            });
 
-                Console.WriteLine($"playerMoved : ({playerdata.X}, {playerdata.Y})");
-
-                // 다시 입력 프롬프트 출력
-                Console.Write("메시지 입력: ");
+            connection.On<List<PlayerPositionDTO>>("UpdatePlayerPositions", (playerdatas) =>
+            {
+                ClearCurrentConsoleLine();
+                for (int i = 0; i < playerdatas.Count; i++)
+                {
+                    Console.WriteLine($"{playerdatas[i].Id} Moved : ({playerdatas[i].X}, {playerdatas[i].Y})");
+                }
             });
 
             await connection.StartAsync();
             Console.WriteLine("Connected to server!");
+            await OnConnect(connection, userName);
 
+            await UserInput(connection, userName);
+
+        }
+
+        static async Task OnConnect(HubConnection connection, string userName)
+        {
+            await connection.InvokeAsync("AddPlayer", userName);
+        }
+
+        static async Task MovePlayer(HubConnection connection, PlayerPositionDTO playerposition)
+        {
+            await connection.InvokeAsync("MovePlayer", playerposition.Id, playerposition.X, playerposition.Y);
+        }
+
+        static async Task UserInput(HubConnection connection, string userName)
+        {
             while (true)
             {
-                Console.Write("메시지 입력: ");
-                var msg = Console.ReadLine();
-                if (string.IsNullOrWhiteSpace(msg))
-                {
-                    await connection.InvokeAsync("SendMessage", userName, $"User Exist {userName}");
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
 
-                }
-                else if (msg == "AddPlayer")
+                switch (keyInfo.Key)
                 {
-                    await connection.InvokeAsync("AddPlayer", userName);
-
-                    Console.WriteLine("Player Added!!");
+                    case ConsoleKey.W:
+                        await MovePlayer(connection, new PlayerPositionDTO(userName, 0, 1));
+                        break;
+                    case ConsoleKey.A:
+                        await MovePlayer(connection, new PlayerPositionDTO(userName, -1, 0));
+                        break;
+                    case ConsoleKey.S:
+                        await MovePlayer(connection, new PlayerPositionDTO(userName, 0, -1));
+                        break;
+                    case ConsoleKey.D:
+                        await MovePlayer(connection, new PlayerPositionDTO(userName, 1, 0));
+                        break;
+                    case ConsoleKey.Escape:
+                        await connection.InvokeAsync("SendMessage", userName, $"User Exist {userName}");
+                        await connection.StopAsync();
+                        return;
+                    default:
+                        break;
                 }
-                else if(msg == "GetPlayerDatas")
-                {
-                    List<PlayerPositionDTO> playerdatas =
-                        await connection.InvokeAsync<List<PlayerPositionDTO>>("GetPlayerDatas");
-
-                    for (int i = 0; i < playerdatas.Count; i++)
-                    {
-                        Console.WriteLine($"playerData : {playerdatas[i]}");
-                    }
-                }
-                else
-                    await connection.InvokeAsync("SendMessage", userName, msg);
             }
         }
 

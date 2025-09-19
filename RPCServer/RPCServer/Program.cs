@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-
-namespace RPCServer
+﻿namespace RPCServer
 {
     internal class Program
     {
@@ -11,6 +8,7 @@ namespace RPCServer
 
             builder.Services.AddSingleton<GameManager>();
             builder.Services.AddSignalR();
+            builder.Services.AddHostedService<GameLoopService>();
 
             var app = builder.Build();
 
