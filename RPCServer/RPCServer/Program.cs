@@ -9,7 +9,7 @@ namespace RPCServer
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // SignalR 서비스 등록
+            builder.Services.AddSingleton<GameManager>();
             builder.Services.AddSignalR();
 
             var app = builder.Build();

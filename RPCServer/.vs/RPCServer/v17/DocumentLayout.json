@@ -1,18 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\GitFork\\PiedPixels\\RPCServer\\",
+  "WorkspaceRootPath": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9C71772-BD4E-459C-BCE9-58119D856F23}|RPCClient\\RPCClient.csproj|c:\\gitfork\\piedpixels\\rpcserver\\rpcclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{B9C71772-BD4E-459C-BCE9-58119D856F23}|RPCClient\\RPCClient.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B9C71772-BD4E-459C-BCE9-58119D856F23}|RPCClient\\RPCClient.csproj|solutionrelative:rpcclient\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\gitfork\\piedpixels\\rpcserver\\rpcserver\\gamehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\gamehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\gamehub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\gitfork\\piedpixels\\rpcserver\\rpcserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B9C71772-BD4E-459C-BCE9-58119D856F23}|RPCClient\\RPCClient.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcclient\\playerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B9C71772-BD4E-459C-BCE9-58119D856F23}|RPCClient\\RPCClient.csproj|solutionrelative:rpcclient\\playerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\playerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\playerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,26 +46,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "PlayerDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCClient\\PlayerDTO.cs",
+              "RelativeDocumentMoniker": "RPCClient\\PlayerDTO.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCClient\\PlayerDTO.cs",
+              "RelativeToolTip": "RPCClient\\PlayerDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T23:28:28.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PlayerDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\PlayerDTO.cs",
+              "RelativeDocumentMoniker": "RPCServer\\PlayerDTO.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\PlayerDTO.cs",
+              "RelativeToolTip": "RPCServer\\PlayerDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T23:25:00.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\GameManager.cs",
+              "RelativeDocumentMoniker": "RPCServer\\GameManager.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\GameManager.cs",
+              "RelativeToolTip": "RPCServer\\GameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-18T15:33:00.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "GameHub.cs",
-              "DocumentMoniker": "C:\\GitFork\\PiedPixels\\RPCServer\\RPCServer\\GameHub.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\GameHub.cs",
               "RelativeDocumentMoniker": "RPCServer\\GameHub.cs",
-              "ToolTip": "C:\\GitFork\\PiedPixels\\RPCServer\\RPCServer\\GameHub.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\GameHub.cs",
               "RelativeToolTip": "RPCServer\\GameHub.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowCMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T15:18:27.019Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\GitFork\\PiedPixels\\RPCServer\\RPCServer\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\Program.cs",
               "RelativeDocumentMoniker": "RPCServer\\Program.cs",
-              "ToolTip": "C:\\GitFork\\PiedPixels\\RPCServer\\RPCServer\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\Program.cs",
               "RelativeToolTip": "RPCServer\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T15:16:28.077Z",
               "EditorCaption": ""
@@ -62,11 +113,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\GitFork\\PiedPixels\\RPCServer\\RPCClient\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCClient\\Program.cs",
               "RelativeDocumentMoniker": "RPCClient\\Program.cs",
-              "ToolTip": "C:\\GitFork\\PiedPixels\\RPCServer\\RPCClient\\Program.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCClient\\Program.cs",
               "RelativeToolTip": "RPCClient\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowBsAAAA+AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-18T15:15:29.924Z",
               "EditorCaption": ""

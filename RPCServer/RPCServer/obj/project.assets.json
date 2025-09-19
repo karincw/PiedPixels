@@ -1903,11 +1903,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\GitFork\\PiedPixels\\RPCServer\\RPCServer\\RPCServer.csproj",
+      "projectUniqueName": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\RPCServer.csproj",
       "projectName": "RPCServer",
-      "projectPath": "C:\\GitFork\\PiedPixels\\RPCServer\\RPCServer\\RPCServer.csproj",
+      "projectPath": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\RPCServer.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\GitFork\\PiedPixels\\RPCServer\\RPCServer\\obj\\",
+      "outputPath": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
