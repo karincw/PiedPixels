@@ -2,6 +2,8 @@
 {
     public interface IRpcMethodBase
     {
-        public Task<object> HelloAsync(Dictionary<string, object>? parameters);
+        public Task<HelloResponse> HelloAsync(Dictionary<string, object>? parameters);
     }
+
+    public record HelloResponse(string message);
 }

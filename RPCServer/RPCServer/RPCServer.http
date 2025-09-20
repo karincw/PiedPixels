@@ -4,7 +4,6 @@ POST {{RPCServer_HostAddress}}/rpc
 Content-type:Application/json
 
 {
-  "Jsonrpc":"2.0",
   "Method":"hello",
   "Params":{"name":"world"},
   "Id":1

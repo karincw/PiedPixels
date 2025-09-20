@@ -8,22 +8,7 @@ namespace RPCServer
     {
         static void Main(string[] args)
         {
-            Dictionary<string, Func<Dictionary<string, object>?, Task<object>>> rpcMethodDictionary = new();
-            RpcMethod rpcMethod = new();
-
-            var methods = typeof(IRpcMethodBase).GetMethods();
-            foreach (var method in methods)
-            {
-                string rpcName = method.Name.Replace("Async", "").ToLower();
-
-                rpcMethodDictionary[rpcName] = async (parameter) =>
-                {
-                    var result = method.Invoke(rpcMethod, new object?[] { parameter });
-                    return await (Task<object>)result;
-                };
-
-            }
-
+            RpcDispatcher rpcDispatcher = new RpcDispatcher();
             var builder = WebApplication.CreateBuilder(args);
             var app = builder.Build();
 
@@ -45,7 +30,6 @@ namespace RPCServer
                     return Results.Json(new {error = "Invalid request"});
                 }
 
-                //RPC실행
                 object? result = null;
 
                 if(rpcRequest.Method == null)
@@ -53,10 +37,8 @@ namespace RPCServer
                     return Results.Json(new { error = "Method Name Required" });
                 }
 
-                if(rpcMethodDictionary.TryGetValue(rpcRequest.Method.ToLower(), out var handle))
-                {
-                    result = await handle(rpcRequest.Params);
-                }
+                //RPC실행
+                await rpcDispatcher.DispatchAsync(rpcRequest);
 
                 //응답 전송
                 var response = new RpcResponseDTO

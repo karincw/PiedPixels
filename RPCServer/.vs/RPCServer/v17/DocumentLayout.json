@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\rpcserver.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\rpcserver.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\rpcserver.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\rpcserver.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\rpcservice\\rpcmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\rpcservice\\rpcmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\rpcdispatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\rpcdispatcher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\rpcservice\\rpcmethodbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\rpcservice\\rpcmethodbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\dto\\rpcresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|solutionrelative:rpcserver\\dto\\rpcresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2815BAC7-295D-437F-8C7C-DF278A95DE0C}|RPCServer\\RPCServer.csproj|c:\\users\\user\\downloads\\piedpixels\\rpcserver\\rpcserver\\dto\\rpcrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,17 +38,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "RPCServer.http",
               "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\RPCServer.http",
               "RelativeDocumentMoniker": "RPCServer\\RPCServer.http",
               "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\RPCServer.http",
               "RelativeToolTip": "RPCServer\\RPCServer.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
               "WhenOpened": "2025-09-19T14:40:19.349Z",
               "IsPinned": true,
@@ -56,13 +64,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
+              "Title": "RpcDispatcher.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\RpcDispatcher.cs",
+              "RelativeDocumentMoniker": "RPCServer\\RpcDispatcher.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\RpcDispatcher.cs",
+              "RelativeToolTip": "RPCServer\\RpcDispatcher.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAowEkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T13:48:10.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RpcResponseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\DTO\\RpcResponseDTO.cs",
+              "RelativeDocumentMoniker": "RPCServer\\DTO\\RpcResponseDTO.cs",
+              "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\DTO\\RpcResponseDTO.cs",
+              "RelativeToolTip": "RPCServer\\DTO\\RpcResponseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-20T11:48:24.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "RpcRequestDTO.cs",
               "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\DTO\\RpcRequestDTO.cs",
               "RelativeDocumentMoniker": "RPCServer\\DTO\\RpcRequestDTO.cs",
               "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\DTO\\RpcRequestDTO.cs",
               "RelativeToolTip": "RPCServer\\DTO\\RpcRequestDTO.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T15:14:05.182Z",
               "EditorCaption": ""
@@ -75,33 +109,33 @@
               "RelativeDocumentMoniker": "RPCServer\\RpcService\\RpcMethod.cs",
               "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\RpcService\\RpcMethod.cs",
               "RelativeToolTip": "RPCServer\\RpcService\\RpcMethod.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T15:10:41.739Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "RpcMethodBase.cs",
               "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\RpcService\\RpcMethodBase.cs",
               "RelativeDocumentMoniker": "RPCServer\\RpcService\\RpcMethodBase.cs",
               "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\RpcService\\RpcMethodBase.cs",
               "RelativeToolTip": "RPCServer\\RpcService\\RpcMethodBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T15:09:34.474Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\Program.cs",
               "RelativeDocumentMoniker": "RPCServer\\Program.cs",
               "ToolTip": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCServer\\Program.cs",
               "RelativeToolTip": "RPCServer\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAADkAAAA9AAAAAAAAAA==",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAACsAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-19T03:17:30.792Z",
               "EditorCaption": ""
