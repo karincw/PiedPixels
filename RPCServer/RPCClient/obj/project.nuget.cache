@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ghAL0vv7pjc=",
+  "dgSpecHash": "bz53JciZcK0=",
   "success": true,
   "projectFilePath": "C:\\Users\\user\\Downloads\\PiedPixels\\RPCServer\\RPCClient\\RPCClient.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\yamldotnet\\16.3.0\\yamldotnet.16.3.0.nupkg.sha512"
+  ],
   "logs": []
 }

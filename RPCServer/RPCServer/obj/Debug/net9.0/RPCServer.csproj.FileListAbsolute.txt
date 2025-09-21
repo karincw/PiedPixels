@@ -89,3 +89,4 @@ C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\obj\Debug\net9.0\refint\R
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\obj\Debug\net9.0\RPCServer.pdb
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\obj\Debug\net9.0\RPCServer.genruntimeconfig.cache
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\obj\Debug\net9.0\ref\RPCServer.dll
+C:\Users\user\Downloads\PiedPixels\RPCServer\RPCServer\bin\Debug\net9.0\YamlDotNet.dll

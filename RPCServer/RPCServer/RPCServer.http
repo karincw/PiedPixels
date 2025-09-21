@@ -1,6 +1,35 @@
 ﻿@RPCServer_HostAddress = https://localhost:5000
+@RPCServer_WebSocketAddress = ws://localhost:5000
+
+POST {{RPCServer_HostAddress}}/rpc?in=json&out=yaml
+Content-type:Application/json
+
+{
+  "Method":"hello",
+  "Params":{"name":"world"},
+  "Id":1
+}
+###
 
 POST {{RPCServer_HostAddress}}/rpc
+Content-type:application/x-yaml
+
+Method: hello
+Params:
+  name: world
+Id: 1
+###
+
+POST {{RPCServer_HostAddress}}/rpc?in=yaml&out=yaml
+Content-type:application/x-yaml
+
+Method: hello
+Params:
+  name: world
+Id: 1
+###
+
+GET {{RPCServer_WebSocketAddress}}/ws
 Content-type:Application/json
 
 {
