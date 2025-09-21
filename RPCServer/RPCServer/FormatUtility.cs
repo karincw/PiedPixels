@@ -48,5 +48,19 @@ namespace RPCServer
 
             return DataFormat.Json;
         }
+
+        public static string GetContentType(DataFormat format)
+        {
+            switch (format)
+            {
+                case DataFormat.Json:
+                    return "application/json";
+                case DataFormat.Yaml:
+                    return "application/x-yaml";
+                default:
+                    return string.Empty;
+            }
+        }
+
     }
 }

@@ -43,7 +43,7 @@ namespace RPCServer
             }
         }
 
-        public async Task<RpcResponseDTO> DispatchAsync(RpcRequestDTO request, DataFormat format)
+        public async Task<RpcResponseDTO> DispatchAsync(RpcRequestDTO request)
         {
             RpcResponseDTO resultDTO = new();
             if (rpcMethodDictionary.TryGetValue(request.Method.ToLower(), out var handler))

@@ -16,12 +16,13 @@ namespace RPCServer
             builder.Services.AddSingleton<RpcDispatcher>();
 
             var app = builder.Build();
-             
+
             app.UseWebSockets();
 
             app.MapGet("/", () => "Game Server is running!");
-            
+
             #region Http 방식
+
             app.MapPost("rpc", async (HttpRequest request, RpcDispatcher rpcDispatcher) =>
             {
                 //StreamReader알아보기
@@ -30,28 +31,38 @@ namespace RPCServer
                 var body = await reader.ReadToEndAsync();
 
                 //입력받은 데이터의 포멧을 확인
-                DataFormat format = FormatUtility.ResolveInput(request);
+                DataFormat inputFormat = FormatUtility.ResolveInput(request);
+                DataFormat outputFormat = FormatUtility.ResolveOutput(request);
 
                 //입력받은 데티어를 확인한 포멧으로 역직렬화
-                RpcRequestDTO rpcRequest = SerializerUtility.DeSerializer(body, format);
+                RpcRequestDTO rpcRequest = SerializerUtility.DeSerializer(body, inputFormat);
 
-                if(rpcRequest == null)
+                if (rpcRequest == null)
                 {
-                    return Results.Json(new {error = "Invalid request"});
+                    return Results.Json(new { error = "Invalid request" });
                 }
 
-                if(rpcRequest.Method == null)
+                if (rpcRequest.Method == null)
                 {
                     return Results.Json(new { error = "Method Name Required" });
                 }
-                
-                // RPC실행
-                RpcResponseDTO response = await rpcDispatcher.DispatchAsync(rpcRequest, format);
 
-                return Results.Json(response);
+                // RPC실행
+                RpcResponseDTO responseDTO = await rpcDispatcher.DispatchAsync(rpcRequest);
+
+                //직렬화
+                byte[] response = SerializerUtility.Serializer(responseDTO, outputFormat);
+
+                //전송
+                return Results.Bytes(
+                    contents: response,
+                    contentType: FormatUtility.GetContentType(outputFormat)
+                );
             });
 
             #endregion
+
+            #region WebSocket방식
 
             app.MapGet("/ws", async (HttpContext context, RpcDispatcher rpcDispatcher) =>
             {
@@ -91,6 +102,8 @@ namespace RPCServer
                 }
 
             });
+
+            #endregion
 
             app.Run();
         }
