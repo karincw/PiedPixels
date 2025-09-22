@@ -9,6 +9,8 @@ namespace RPCClient
         {
             using var ws = new ClientWebSocket();
             await ws.ConnectAsync(new Uri("ws://localhost:5000/ws?in=yaml&out=json"), CancellationToken.None);
+            
+            Console.WriteLine("Server Connect");
 
             while (Console.ReadKey().Key != ConsoleKey.Escape)
             {

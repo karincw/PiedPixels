@@ -23,72 +23,19 @@ Content-type:Application/json
 POST {{RPCServer_HostAddress}}/rpc?in=yaml&out=yaml
 Content-type:application/x-yaml
 
-Method:
+Method: add
 Params:
-  name: world
-Id: 2
+  left: 53
+  right: 12
+Id: 1
 ###
 
 POST {{RPCServer_HostAddress}}/rpc
 Content-type:Application/json
 
 {
-  "Method":"",
-  "Params":{"name":"world"},
-  "Id":2
-}
-###
-
-POST {{RPCServer_HostAddress}}/rpc?in=yaml&out=yaml
-Content-type:application/x-yaml
-
-Method: hello
-Params:
-  name: 
-Id: 3
-###
-
-POST {{RPCServer_HostAddress}}/rpc
-Content-type:Application/json
-
-{
-  "Method":"hello",
-  "Params":{"name":""},
-  "Id":3
-}
-###
-
-POST {{RPCServer_HostAddress}}/rpc?in=yaml&out=yaml
-Content-type:application/x-yaml
-
-Method: hello
-Params:
-  
-Id: 4
-###
-
-POST {{RPCServer_HostAddress}}/rpc
-Content-type:Application/json
-
-{
-  "Method":"hello",
-  "Params":{},
-  "Id":4
-}
-###
-
-POST {{RPCServer_HostAddress}}/rpc?in=yaml&out=yaml
-Content-type:application/x-yaml
-
-Method: hello
-Id: 4
-###
-
-POST {{RPCServer_HostAddress}}/rpc
-Content-type:Application/json
-
-{
-  "Method":"hello",
-  "Id":4
+  "Method":"add",
+  "Params":{"left":131, "right":30},
+  "Id":1
 }
 ###

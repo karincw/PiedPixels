@@ -1,9 +1,8 @@
 ﻿using RPCServer.DTO;
 using RPCServer.RpcService;
 using RPCServer.Serializer;
+using System.Buffers;
 using System.Net.WebSockets;
-using System.Text;
-using System.Text.Json;
 
 namespace RPCServer
 {
@@ -74,16 +73,22 @@ namespace RPCServer
                 }
 
                 // WS 핸드셰이크 수락 (여기서부터 연결이 성립됨)
+                // 핸드셰이크 : http에서 websocket으로 업그레이드
                 using var webSocket = await context.WebSockets.AcceptWebSocketAsync();
 
-                // 수신 버퍼 준비 추후 *SharedBuffer로 변경
-                var buffer = new byte[1024];
+                byte[] buffer = null;
 
                 // 연결 열린 동안 루프
+                // 각각의 webSocket마다 하나씩 돌아감
+                // 이벤트? 비슷하게 돌아가기 때문에 데이터를 받을때까지 잠들어있음
+                // 컨택스드 스위칭 안일어남
                 while (webSocket.State == WebSocketState.Open)
                 {
                     try
                     {
+                        //ArrayPool에서 버퍼 빌려오기
+                        buffer = ArrayPool<byte>.Shared.Rent(1024 * 4);
+
                         // WEbSocket이 하나의 메세지를 여러버퍼에 나눠서 보낼수 있기떄문에 MemoryStream을 이용해서 이어붙여야함    
                         using var memoryStream = new MemoryStream();
 
@@ -104,7 +109,9 @@ namespace RPCServer
                                     WebSocketCloseStatus.NormalClosure,
                                     "Closed by client",
                                     CancellationToken.None);
+
                                 return; // 연결 종료
+                                // return시에도 finally는 작동함
                             }
 
                             memoryStream.Write(buffer, 0, receiveResult.Count);
@@ -146,6 +153,10 @@ namespace RPCServer
                         // 그 외 예외(핸들러/직렬화/디스패치 오류)
                         Console.WriteLine($"[Unhandled] {ex.Message}");
                         break;
+                    }
+                    finally
+                    {
+                        ArrayPool<byte>.Shared.Return(buffer, true);
                     }
                 }
             });
