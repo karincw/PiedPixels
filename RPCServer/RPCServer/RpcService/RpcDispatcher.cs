@@ -1,8 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Conventions;
-using RPCServer.DTO;
-using RPCServer.RpcService;
+﻿using RPCServer.DTO;
 
-namespace RPCServer
+namespace RPCServer.RpcService
 {
     public class RpcDispatcher
     {
@@ -51,8 +49,17 @@ namespace RPCServer
                 resultDTO.id = request.Id;
                 try
                 {
-                    var result = await handler(request.Params);
-                    resultDTO.result = result;
+                    object result = await handler(request.Params);
+
+                    if (result is Response response)
+                    {
+                        resultDTO.result = response.result;
+                        resultDTO.error = response.error;
+                    }
+                    else
+                    {
+                        resultDTO.result = result;
+                    }
                 }
                 catch (Exception ex)
                 {

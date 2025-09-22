@@ -46,3 +46,6 @@ C:\Users\user\Downloads\PiedPixels\RPCServer\RPCClient\obj\Debug\net9.0\refint\R
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCClient\obj\Debug\net9.0\RPCClient.pdb
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCClient\obj\Debug\net9.0\RPCClient.genruntimeconfig.cache
 C:\Users\user\Downloads\PiedPixels\RPCServer\RPCClient\obj\Debug\net9.0\ref\RPCClient.dll
+C:\Users\user\Downloads\PiedPixels\RPCServer\RPCClient\bin\Debug\net9.0\YamlDotNet.dll
+C:\Users\user\Downloads\PiedPixels\RPCServer\RPCClient\obj\Debug\net9.0\RPCClient.csproj.AssemblyReference.cache
+C:\Users\user\Downloads\PiedPixels\RPCServer\RPCClient\obj\Debug\net9.0\RPCClient.csproj.Up2Date

@@ -33,9 +33,48 @@ namespace RPCServer
             return DataFormat.Json;
         }
 
+        public static DataFormat ResolveInput(HttpContext context)
+        {
+            var query = context.Request.Query["in"].ToString().ToLower();
+
+            IEnumerable dataformats = Enum.GetValues(typeof(DataFormat));
+            foreach (DataFormat format in dataformats)
+            {
+                if (query.Equals(format.ToString().ToLower()))
+                {
+                    return format;
+                }
+            }
+            foreach (DataFormat format in dataformats)
+            {
+                if (context.Request.ContentType?.Contains(format.ToString().ToLower()) == true)
+                {
+                    return format;
+                }
+            }
+
+            return DataFormat.Json;
+        }
+
         public static DataFormat ResolveOutput(HttpRequest request)
         {
             var query = request.Query["out"].ToString().ToLower();
+
+            IEnumerable dataformats = Enum.GetValues(typeof(DataFormat));
+            foreach (DataFormat format in dataformats)
+            {
+                if (query.Equals(format.ToString().ToLower()))
+                {
+                    return format;
+                }
+            }
+
+            return DataFormat.Json;
+        }
+
+        public static DataFormat ResolveOutput(HttpContext context)
+        {
+            var query = context.Request.Query["out"].ToString().ToLower();
 
             IEnumerable dataformats = Enum.GetValues(typeof(DataFormat));
             foreach (DataFormat format in dataformats)

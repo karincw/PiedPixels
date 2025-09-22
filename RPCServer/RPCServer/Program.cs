@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Components;
-using RPCServer.DTO;
+﻿using RPCServer.DTO;
 using RPCServer.RpcService;
 using RPCServer.Serializer;
 using System.Net.WebSockets;
@@ -66,41 +65,89 @@ namespace RPCServer
 
             app.MapGet("/ws", async (HttpContext context, RpcDispatcher rpcDispatcher) =>
             {
-                if (context.WebSockets.IsWebSocketRequest)
+                // 현재 요청이 WebSocket 요청인지 검사
+                if (!context.WebSockets.IsWebSocketRequest)
                 {
-                    using var webSocket = await context.WebSockets.AcceptWebSocketAsync();
+                    // WS 요청이 아니면 400(Bad Request) 반환
+                    context.Response.StatusCode = StatusCodes.Status400BadRequest;
+                    return;
+                }
 
-                    var buffer = new byte[1024 * 4];
-                    var cancel = CancellationToken.None;
+                // WS 핸드셰이크 수락 (여기서부터 연결이 성립됨)
+                using var webSocket = await context.WebSockets.AcceptWebSocketAsync();
 
-                    while (true)
+                // 수신 버퍼 준비 추후 *SharedBuffer로 변경
+                var buffer = new byte[1024];
+
+                // 연결 열린 동안 루프
+                while (webSocket.State == WebSocketState.Open)
+                {
+                    try
                     {
-                        var result = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), cancel);
-                        if (result.MessageType == WebSocketMessageType.Close)
+                        // WEbSocket이 하나의 메세지를 여러버퍼에 나눠서 보낼수 있기떄문에 MemoryStream을 이용해서 이어붙여야함    
+                        using var memoryStream = new MemoryStream();
+
+                        WebSocketReceiveResult receiveResult;
+                        do
                         {
-                            await webSocket.CloseAsync(WebSocketCloseStatus.NormalClosure, "Closing", cancel);
-                            break;
+                            // 프레임 수신(부분 수신 가능)
+                            //    - result.Count: 이번 프레임에 담긴 바이트 수
+                            //    - result.EndOfMessage: 이 프레임이 메시지의 끝인지 여부
+                            //    - result.MessageType: Text/Binary/Close 중 하나
+                            receiveResult = await webSocket.ReceiveAsync(new ArraySegment<byte>(buffer), CancellationToken.None);
+
+                            // 클라이언트가 종료 의사를 보낸 경우
+                            if (receiveResult.MessageType == WebSocketMessageType.Close)
+                            {
+                                // 정상 종료 응답을 보내고 종료
+                                await webSocket.CloseAsync(
+                                    WebSocketCloseStatus.NormalClosure,
+                                    "Closed by client",
+                                    CancellationToken.None);
+                                return; // 연결 종료
+                            }
+
+                            memoryStream.Write(buffer, 0, receiveResult.Count);
+
+                        } while (!receiveResult.EndOfMessage); // 메시지가 끝날때까지 반복
+
+                        // 텍스트 메시지만 처리 (바이너리는 스킵하거나 별도 처리 로직 추가 가능)
+                        if (receiveResult.MessageType != WebSocketMessageType.Text)
+                        {
+                            // 필요시 Binary도 허용하려면 여기서 분기 처리
+                            continue;
                         }
 
-                        var requestJson = Encoding.UTF8.GetString(buffer, 0, result.Count);
-                        var rpcRequest = JsonSerializer.Deserialize<RpcRequestDTO>(requestJson);
+                        DataFormat inputFormat = FormatUtility.ResolveInput(context);
+                        DataFormat outputFormat = FormatUtility.ResolveOutput(context);
 
-                        if (rpcRequest != null)
-                        {
-                            var response = await rpcDispatcher.DispatchAsync(rpcRequest);
-                            var responseJson = JsonSerializer.Serialize(response);
-                            var responseBytes = Encoding.UTF8.GetBytes(responseJson);
+                        RpcRequestDTO rpcRequest = SerializerUtility.DeSerializer(memoryStream.ToArray(), inputFormat);
 
-                            await webSocket.SendAsync(new ArraySegment<byte>(responseBytes), WebSocketMessageType.Text, true, cancel);
-                        }
+                        RpcResponseDTO rpcResponse = await rpcDispatcher.DispatchAsync(rpcRequest);
+
+
+                        var responseBytes = SerializerUtility.Serializer(rpcResponse, outputFormat);
+
+                        // endOfMessage : true 여서 한번에 데이터를 보내지만 네트워크단계에서 나눠서 보내질 수 있음 
+                        await webSocket.SendAsync(
+                            new ArraySegment<byte>(responseBytes),
+                            WebSocketMessageType.Text,
+                            endOfMessage: true,
+                            cancellationToken: CancellationToken.None);
                     }
-                    Console.WriteLine("Recived!!");
+                    catch (WebSocketException wsex)
+                    {
+                        // 네트워크/프로토콜 오류(연결 끊김 등)
+                        Console.WriteLine($"[WebSocketException] {wsex.Message}");
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        // 그 외 예외(핸들러/직렬화/디스패치 오류)
+                        Console.WriteLine($"[Unhandled] {ex.Message}");
+                        break;
+                    }
                 }
-                else
-                {
-                    context.Response.StatusCode = 400; // WebSocket 요청이 아닌 경우
-                }
-
             });
 
             #endregion
