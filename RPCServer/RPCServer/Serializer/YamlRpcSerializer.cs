@@ -14,7 +14,7 @@ namespace RPCServer.Serializer
 
         private static readonly YamlDotNet.Serialization.ISerializer serializer = new SerializerBuilder()
         .WithNamingConvention(PascalCaseNamingConvention.Instance)
-        .ConfigureDefaultValuesHandling(DefaultValuesHandling.Preserve)
+        .ConfigureDefaultValuesHandling(DefaultValuesHandling.OmitNull)
         // Preserve : 전부 기록 (null) / OmitNull : Null기록안함 / OmitDefaults : Null과 기본값(0, string.empty)기록안함
         .Build();
 

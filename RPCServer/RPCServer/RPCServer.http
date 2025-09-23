@@ -4,9 +4,10 @@
 POST {{RPCServer_HostAddress}}/rpc?in=yaml&out=yaml
 Content-type:application/x-yaml
 
+JsonRPC: 2.0
 Method: hello
 Params:
-  name: world
+  name: choi 0 hwan
 Id: 1
 ###
 
@@ -14,8 +15,9 @@ POST {{RPCServer_HostAddress}}/rpc
 Content-type:Application/json
 
 {
+  "JsonRPC":"2.0",
   "Method":"hello",
-  "Params":{"name":"world"},
+  "Params":{"name":"karin"},
   "Id":1
 }
 ###
@@ -23,6 +25,7 @@ Content-type:Application/json
 POST {{RPCServer_HostAddress}}/rpc?in=yaml&out=yaml
 Content-type:application/x-yaml
 
+JsonRPC: 2.0
 Method: add
 Params:
   left: 53

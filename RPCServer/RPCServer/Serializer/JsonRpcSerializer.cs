@@ -15,14 +15,22 @@ namespace RPCServer.Serializer
             options = new JsonSerializerOptions
             {
                 PropertyNameCaseInsensitive = true
-            }; 
+            };
             options.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
             options.Converters.Add(new JsonTypeConverter());
         }
 
         public RpcRequestDTO DeSerialize(string data)
         {
-            return JsonSerializer.Deserialize<RpcRequestDTO>(data, options);
+            try
+            {
+                return JsonSerializer.Deserialize<RpcRequestDTO>(data, options);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return null;
+            }
         }
 
         public RpcRequestDTO DeSerialize(byte[] data)

@@ -32,17 +32,17 @@ namespace RPCServer
                 DataFormat inputFormat = FormatUtility.ResolveInput(request);
                 DataFormat outputFormat = FormatUtility.ResolveOutput(request);
 
-                //입력받은 데티어를 확인한 포멧으로 역직렬화
+                //입력받은 데이터를 확인한 포멧으로 역직렬화
                 RpcRequestDTO rpcRequest = SerializerUtility.DeSerializer(body, inputFormat);
 
                 if (rpcRequest == null)
                 {
-                    return Results.Json(new { error = "Invalid request" });
-                }
-
-                if (rpcRequest.Method == null)
-                {
-                    return Results.Json(new { error = "Method Name Required" });
+                    return Results.Json(new RpcResponseDTO
+                    {
+                        id = 0,
+                        error = new RpcErrorDTO(code: -32700, message: "Parse error", null),
+                        result = null
+                    });
                 }
 
                 // RPC실행
@@ -156,7 +156,8 @@ namespace RPCServer
                     }
                     finally
                     {
-                        ArrayPool<byte>.Shared.Return(buffer, true);
+                        if (buffer != null)
+                            ArrayPool<byte>.Shared.Return(buffer, true);
                     }
                 }
             });
